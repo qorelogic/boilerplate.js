@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "boilerplate includes: webpack, babel, react",
   "main": "app.js",
-  #"main2": "webpack.config.js",
   "bin": {
     "qorelogic.boilerplate.js": "app.bundle.js"
   },
