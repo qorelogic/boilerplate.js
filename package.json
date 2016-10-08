@@ -3,15 +3,33 @@
   "version": "0.0.1",
   "description": "boilerplate includes: webpack, babel, react",
   "main": "app.js",
+  #"main2": "webpack.config.js",
+  "bin": {
+    "qorelogic.boilerplate.js": "app.bundle.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qorelogic/boilerplate.js.git"
+  },
   "author": "Jeff Kiiza",
   "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "webpack": "^1.13.2"
+  },
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "webpack": "^1.13.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/qorelogic/boilerplate.js/issues"
+  },
+  "homepage": "https://github.com/qorelogic/boilerplate.js#readme"
 }
