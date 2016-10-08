@@ -1,0 +1,19 @@
+
+div.list table {
+  background-color: #eee;
+  padding: 15px;
+}
+
+div.list table th, div.list table td {
+  background-color: #ddd;
+  padding: 5px;
+  width: 100px;
+}
+
+div.list table th {
+  text-align: right;
+}
+
+div.list table td {
+  text-align: left;
+}
