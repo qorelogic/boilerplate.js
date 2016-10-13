@@ -16,4 +16,5 @@ npm install --save-dev babel-preset-react
 echo 'installing react..'
 npm install --save-dev react
 npm install --save-dev react-dom
+npm install --save-dev react-datagrid
 fi
