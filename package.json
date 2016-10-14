@@ -31,6 +31,7 @@
     "react": "^15.3.2",
     "react-datagrid": "^2.1.1",
     "react-dom": "^15.3.2",
+    "sorty": "^1.2.2",
     "webpack": "^1.13.2"
   },
   "bugs": {
