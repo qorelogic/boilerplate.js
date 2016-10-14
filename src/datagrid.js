@@ -2,10 +2,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import DataGrid from 'react-datagrid'
+import sorty from 'sorty'
+//var sorty    = require('sorty')
+
 //import data from '../data/1000'
 //var React    = require('react')
 //var DataGrid = require('react-datagrid')
 //var data     = require('../data/1000') //a data array
+var SORT_INFO = [ { name: 'instrument', dir: 'asc'}]
+
 /**
  * data is an array with 1000 items, like:
  * [
@@ -13,7 +18,8 @@ import DataGrid from 'react-datagrid'
  * 		{ id: 1, .... }
  * ]
  */
-var data = [
+
+var data1000 = [
  { id: 0,   index: 1, firstName: 'John', lastName: 'McPhereson', city: 'London', email: 'jon@gmail.com'},
  { id: '1', index: 2, firstName: 'John', lastName: 'Bobson', city: 'Boston', email: 'jbobson@gmail.com'},
  { id: '2', index: 3, firstName: 'Bob', lastName: 'Mclaren', city: 'Paris', email: 'bmclaren@ms.com'},
@@ -28,6 +34,14 @@ var columns = [
 	{ name: 'email' }
 ]
 
+var data = [].concat(data1000)
+
+function sort(arr){
+	return sorty(SORT_INFO, arr)
+}
+//sort data array with the initial sort order
+data = sort(data)
+
 var App = React.createClass({ // 15.x.x
 //class App extends React.Component { // 0.15.x
 	render: function(){
@@ -35,10 +49,28 @@ var App = React.createClass({ // 15.x.x
 			idProperty='id'
 			dataSource={data}
 			columns={columns}
-			style={{height: 500}}
+			style={{height: 1500}}
 			//if you don't want to show a column menu to show/hide columns, use
 			//withColumnMenu={false}
+                   sortInfo={SORT_INFO}
+                   onSortChange={this.handleSortChange}
+                   onColumnOrderChange={this.handleColumnOrderChange}
+
 		/>
+	},
+	handleSortChange: function(sortInfo){
+		SORT_INFO = sortInfo
+
+		data = [].concat(data1000)
+		data = sort(data)
+
+		this.setState({})
+	},
+	handleColumnOrderChange: function (index, dropIndex){
+		var col = columns[index]
+		columns.splice(index, 1) //delete from index, 1 item
+		columns.splice(dropIndex, 0, col)
+		this.setState({})
 	}
 })
 
